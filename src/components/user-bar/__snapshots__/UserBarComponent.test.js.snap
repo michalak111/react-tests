@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UserBarComponent /> renders correctly 1`] = `
+<div
+  className="rp-user-bar card"
+  onClick={[Function]}
+>
+  <p>
+    First Name: 
+    <strong>
+      First Name
+    </strong>
+  </p>
+  <p>
+    Last Name: 
+    <strong>
+      Last Name
+    </strong>
+  </p>
+</div>
+`;
