@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import UserListComponent from '../../components/user-list/UserListComponent'
 import { UserFormComponent } from '../../components/user-form/UserFormComponent'
-import '../../App.scss'
 import UserCollection from '../../components/user-collection/UserCollectionHOC'
 
 class TeachersContainer extends Component {
@@ -20,7 +19,6 @@ class TeachersContainer extends Component {
   }
   render () {
     const {collection, formData} = this.state
-    console.log(this)
     return (
       <div className="rb-teachers-container">
         <div className="columns">
