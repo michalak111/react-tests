@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TeachersContainer from './containers/Teachers/TeachersContainer'
+import {TeachersCollectionContainer} from './containers/Teachers/TeachersCollectionContainer'
 
 class App extends Component {
   render () {
@@ -7,7 +7,7 @@ class App extends Component {
       <div className="App">
         <div className="section">
           <div className="container">
-            <TeachersContainer/>
+            <TeachersCollectionContainer/>
           </div>
         </div>
       </div>
