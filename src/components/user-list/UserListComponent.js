@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import UserBarComponent from '../user-bar/UserBarComponent'
 
@@ -19,7 +19,7 @@ class UserListComponent extends Component {
   }
 
   render () {
-    const {list} = this.props
+    const { list } = this.props
     return (
       <div>
         {

@@ -2,10 +2,9 @@ import React from 'react'
 import { Form, Field } from 'react-final-form'
 import PropTypes from 'prop-types'
 
-export const UserFormComponent = ({data, onSubmit, validate}) => (
+export const UserFormComponent = ({ data, onSubmit }) => (
   <Form
     onSubmit={(formValues) => onSubmit(formValues)}
-    validate={validate}
     initialValues={data}
     render={({ handleSubmit, pristine, invalid }) => (
       <form className="form" onSubmit={handleSubmit}>

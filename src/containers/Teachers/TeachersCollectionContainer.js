@@ -1,32 +1,20 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import UserListComponent from '../../components/user-list/UserListComponent'
 import { UserFormComponent } from '../../components/user-form/UserFormComponent'
-import UserCollection from '../../components/user-collection/UserCollectionHOC'
+import { withCollectionAndForm } from '../../HOC/withCollectionAndForm'
+import PropTypes from 'prop-types'
 
-class TeachersContainer extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      collection: [
-        { id: 0, firstName: 'Test1', lastName: 'Test1' },
-        { id: 1, firstName: 'Test2', lastName: 'Test2' },
-        { id: 2, firstName: 'Test3', lastName: 'Test3' },
-        { id: 3, firstName: 'Test4', lastName: 'Test4' },
-        { id: 4, firstName: 'Test5', lastName: 'Test5' }
-      ],
-      formData: { id: 0, firstName: 'Test1', lastName: 'Test1' }
-    }
-  }
+class withTeachersCollectionContainer extends Component {
   render () {
-    const {collection, formData} = this.state
+    const { collection, formData, setFormData, updateItemData } = this.props
     return (
       <div className="rb-teachers-container">
         <div className="columns">
           <div className="column">
-            <UserListComponent list={collection} itemClicked={this.setFormData}/>
+            <UserListComponent list={collection} itemClicked={setFormData}/>
           </div>
           <div className="column">
-            <UserFormComponent data={formData} onSubmit={this.updateTeacherData}/>
+            <UserFormComponent data={formData} onSubmit={updateItemData}/>
           </div>
         </div>
       </div>
@@ -34,4 +22,13 @@ class TeachersContainer extends Component {
   }
 }
 
-export const TeachersCollectionContainer = UserCollection(TeachersContainer)
+withTeachersCollectionContainer.propTypes = {
+  collection: PropTypes.array.isRequired,
+  formData: PropTypes.object.isRequired,
+  setFormData: PropTypes.func.isRequired,
+  updateItemData: PropTypes.func.isRequired
+}
+
+const TeachersCollectionContainer = withCollectionAndForm()(withTeachersCollectionContainer)
+
+export default TeachersCollectionContainer

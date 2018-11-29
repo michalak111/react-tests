@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {TeachersCollectionContainer} from './containers/Teachers/TeachersCollectionContainer'
+import TeachersCollectionContainer from './containers/Teachers/TeachersCollectionContainer'
 import './App.scss'
 
 class App extends Component {
